@@ -1,14 +1,15 @@
 const express = require('express');
+const colors = require('colors');
+const dotenv = require('dotenv').config();
 const { errorHandler } = require('./middleware/errorMiddleware');
-const app = express();
-require('dotenv').config();
-// const connectDB = require('./db');
+const connectDB = require('./config/db');
+const PORT = process.env.PORT || 5000;
 // const path = require('path');
 
-const PORT = process.env.PORT || 5000;
-
 // Connect Database
-// connectDB();
+connectDB();
+
+const app = express();
 
 // Init Middleware (Provides access to req.body)
 app.use(express.json());
