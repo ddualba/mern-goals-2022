@@ -17,6 +17,8 @@ app.use(express.urlencoded({ extended: false }));
 
 // Define Routes
 app.use('/api/goals', require('./routes/goalRoutes'));
+app.use('/api/users', require('./routes/userRoutes'));
+
 // app.get('/', (req, res) => res.send('API running!'));
 // app.use('/api/users', require('./routes/users'));
 // app.use('/api/auth', require('./routes/auth'));
